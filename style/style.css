@@ -1,15 +1,15 @@
 /* CSS Document */
 @import url("reset.css");
 
-.social{
+.social {
     width: 100%;
     height: auto;
     display: none;
     clear: both;
-    justify-content:center;    
+    justify-content: center;
 }
 
-.social div{
+.social div {
     background-repeat: no-repeat;
     background-size: contain;
     width: 70px;
@@ -17,22 +17,22 @@
     margin: 10px;
 }
 
-.facebook{  
+.facebook {
     background: url("/img/social/facebook.svg") no-repeat;
-    height:20px;
+    height: 20px;
     background-size: contain;
 }
 
-.insta{
-    background-image: url("/img/social/insta.svg");  
+.insta {
+    background-image: url("/img/social/insta.svg");
 }
 
-.cennik{
+.cennik {
     width: 100%;
-    border: none;    
+    border: none;
 }
 
-.godziny-pracy{
+.godziny-pracy {
     position: relative;
     top: -8px;
     text-align: center;
@@ -41,39 +41,219 @@
     z-index: -1;
 }
 
-.godziny-pracy div{
+
+.godziny-pracy div {
+    
+    /* color: #361f00; */
+    font-family: 'Poppins', sans-serif;
+    /* This font is similar to the one in the image */
+    font-weight: 700;
+    /* This makes the font bold */
+     /* text-shadow:
+        3px 2px 4px rgba(99, 57, 28, 0.7); */
+        
+    /*    -2px -2px 2px rgba(90, 40, 4, 0.5); */
+    /* Cień, który daje efekt głębi */
+    font-size: 24px;
+    /* Rozmiar czcionki */
+    line-height: 10.6;
+    /* Wysokość linii dla lepszego umiejscowienia tekstu */
+    height: 200px;
+    /* Zmniejszona wysokość diva */
     width: 220px;
     height: 220px;
+    margin: 10px auto;
     background-size: cover;
     display: inline-block;
-    margin: -2px;   
+    margin: -2px;
 }
 
-.pn{   
-    background-image: url("../img/dni/pn.jpg");   
+.pn,.wt,.sr,.cw,.pt,.so {
+    background-image: url("../img/dni/dzien.jpg");
 }
 
-.wt{
-     background-image: url("../img/dni/wt.jpg")
+/* .wt {
+    background-image: url("../img/dni/wt.jpg")
 }
 
-.sr{
-     background-image: url("../img/dni/sr.jpg")
+.sr {
+    background-image: url("../img/dni/sr.jpg")
 }
 
-.cw{
-     background-image: url("../img/dni/cw.jpg")
+.cw {
+    background-image: url("../img/dni/cw.jpg")
 }
 
-.pt{
-     background-image: url("../img/dni/pt.jpg")
+.pt {
+    background-image: url("../img/dni/pt.jpg")
 }
 
-.so{
-     background-image: url("../img/dni/so.jpg")
+.so {
+    background-image: url("../img/dni/so.jpg")
+} */
+/* 
+.pn {
+    background-image: url("../img/dni/pn.jpg");
 }
 
-footer{
+.wt {
+    background-image: url("../img/dni/wt.jpg")
+}
+
+.sr {
+    background-image: url("../img/dni/sr.jpg")
+}
+
+.cw {
+    background-image: url("../img/dni/cw.jpg")
+}
+
+.pt {
+    background-image: url("../img/dni/pt.jpg")
+}
+
+.so {
+    background-image: url("../img/dni/so.jpg")
+} */
+
+/* .godziny-pracy div {
+   
+    color: #4e2b00; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600; 
+    text-shadow: 
+        1px 1px 0px #7a4c0196, 
+        2px 2px 0px #7a4c0142, 
+        3px 3px 0px #7a4c01a7, 
+        4px 4px 0px #7a4c013e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; 
+}  */
+
+/* You should add a class for each day to specify the opening hours */
+
+.pn::after,.wt::before ,.sr::before,.cw::before,.pt::before,.so::before {
+    /* Styl wspólny dla wszystkich dni */
+    /* color: #331a06; */
+    /* mix-blend-mode:color-burn; */
+    opacity: 0.6;
+    /* font-size: 30; */
+
+    color: #302121;
+    mix-blend-mode:color-burn;
+    /* filter: blur(7px); */
+}
+
+.pn::before,.wt::after ,.sr::after,.cw::after,.pt::after,.so::after {
+    /* Styl wspólny dla wszystkich dni */
+    /* color: #73756a; */
+    /* mix-blend-mode:darken; */
+    /* color: #121212; */
+    /* mix-blend-mode:multiply; */
+    opacity: 0.2;
+    /* font-size: 30; */
+
+    color: #302121;
+    mix-blend-mode:color-burn;
+    filter: blur(4px);
+    /* font-size: 30; */
+    /* mix-blend-mode:darken; */
+    /* filter: blurs(3px); */
+}
+/* .pn::before,.wt::before ,.sr::before,.cw::before,.pt::before,.so::before {
+
+    color: #c91414;
+    mix-blend-mode:color-burn;
+    opacity: 0.6;
+    filter: blur(5px);
+} */
+.pn, .wt, .sr, .cw, .pt, .so {
+    position: relative;
+}
+
+
+:root {
+    --pn: 'poniedziałek\A 12.00 - 19.00';
+    --wt: '---wtorek---\A 10.00 - 17.00';
+    --sr: '---środa----\A 13.00 - 20.00';
+    --cw: '--czwartek--\A 14.00 - 20.00';
+    --pt: '---piątek---\A 10.30 - 19.00';
+    --so: '---sobota---\A *zamknięte*';
+  }
+
+.pn::before, .wt::before, .sr::before, .cw::before, .pt::before, .so::before,
+.pn::after, .wt::after, .sr::after, .cw::after, .pt::after, .so::after {
+    position: absolute;
+    top: -1rem;
+    left: 0.3rem;
+    /* white-space: pre-wrap; */
+    text-align: center; /* Wyśrodkowuje tekst w poziomie */
+    line-height: 2; 
+    transform: translateY(5em);
+  display: block;
+    /* Dodatkowe właściwości, takie jak szerokość, wysokość itd., jeśli są potrzebne */
+}
+
+/* warstwa  */
+
+
+.pn::before {
+    content: var(--pn);
+   
+}
+
+.wt::before {
+    content: var(--wt);
+}
+
+.sr::before {
+    content: var(--sr);
+}
+
+.cw::before {
+    content: var(--cw);
+}
+
+.pt::before {
+    content: var(--pt);
+}
+
+.so::before {
+    content: var(--so);
+}
+
+
+/* warstwa 2 */
+.pn::after {
+    content: var(--pn);
+    
+}
+
+.wt::after {
+    content: var(--wt);
+}
+
+.sr::after {
+    content: var(--sr);
+}
+
+.cw::after {
+    content: var(--cw);
+}
+
+.pt::after {
+    content: var(--pt);
+}
+
+.so::after {
+    content: var(--so);
+}
+
+
+
+footer {
     text-align: center;
 }
 
@@ -81,21 +261,21 @@ nav {
     display: none;
 }
 
-header{
-    background: url("../img/imgHead.jpg") top no-repeat;     
+header {
+    background: url("../img/imgHead.jpg") top no-repeat;
     background-size: cover;
     background-color: aquamarine;
     display: block;
 }
 
-header div{
+header div {
     background-color: #97714F;
     top: 50px;
     padding: 30px 20px 20px 20px;
     border-radius: 50px;
 }
 
-.img-fotel{
+.img-fotel {
     width: 7.2rem;
     height: 4.2rem;
     padding: 0px 40px 0px 10px;
@@ -106,7 +286,7 @@ header div{
     position: relative;
 }
 
-.podpis{ 
+.podpis {
     width: 80%;
     height: 8rem;
     margin: 0 auto;
@@ -114,10 +294,10 @@ header div{
     justify-content: center;
 }
 
-.img-strzalka{
+.img-strzalka {
     background-image: url("../img/SVG/ozd.svg");
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     width: 10rem;
     height: 5rem;
     padding: 0px;
@@ -125,7 +305,7 @@ header div{
 }
 
 
-.shape-cennikUP{
+.shape-cennikUP {
     width: 100%;
     height: 20px;
     margin-top: 4.5rem;
@@ -133,7 +313,7 @@ header div{
     background-size: 1200px;
 }
 
-.shape-cennikDOWN{
+.shape-cennikDOWN {
     width: 100%;
     height: 20px;
     margin-top: -6px;
@@ -144,24 +324,25 @@ header div{
     transform: rotate(180deg);
 }
 
-.perfum div{
+.perfum div {
     width: 100px;
     height: 100px;
     margin: 0 30px;
     column-gap: 40px;
-    padding: 20px; 
+    padding: 20px;
 }
 
-.perfum{
+.perfum {
     width: 100%;
     height: 10rem;
     bottom: 20px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content:center;    
+    justify-content: center;
 }
-.blade{
+
+.blade {
     width: 7.2rem;
     height: 4.2rem;
     padding: 0px 40px 0px 10px;
@@ -173,36 +354,40 @@ header div{
     position: relative;
 }
 
-.vibes{
+.vibes {
     background: url("../img/SVG/imgSq1.svg") no-repeat center;
 }
-.relax{
-    background: url("../img/SVG/imgSqR.svg") no-repeat center;  
+
+.relax {
+    background: url("../img/SVG/imgSqR.svg") no-repeat center;
 }
-.coffe{
+
+.coffe {
     background: url("../img/SVG/imgSq2.svg") no-repeat center;
 }
 
 
-h3{
+h3 {
     text-align: center;
     top: 100px;
     text-transform: uppercase;
     font-family: baskerville-urw, serif;
     font-style: normal;
-    font-weight: 700; 
+    font-weight: 700;
 }
+
 .logo {
     position: relative;
-        padding: 15px;
-        border-radius:50px;
-        background-color:rgba(151,113,79,0.7);
-        top: 3rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;   
+    padding: 15px;
+    border-radius: 50px;
+    background-color: rgba(151, 113, 79, 0.7);
+    top: 3rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.zdjecia{
+
+.zdjecia {
     width: 98%;
     text-align: center;
     margin-top: 1rem;
@@ -212,22 +397,22 @@ h3{
     padding-bottom: 2rem;
     padding-top: 2rem;
     margin: 0 auto;
-    clear:both;
+    clear: both;
 }
 
-.zdjecia div{
+.zdjecia div {
     background-size: contain;
     width: 15rem;
-    height:20rem;
+    height: 20rem;
     display: inline-block;
 }
 
 .podkladDN {
-    width:100%;
+    width: 100%;
     height: 5rem;
     background-image: url("../img/podklad.jpg");
     position: relative;
-    mix-blend-mode:darken;
+    mix-blend-mode: darken;
     top: -5px;
     z-index: 100;
     transform: rotate(180deg);
@@ -238,42 +423,56 @@ h3{
 }
 
 .podkladUP {
-    width:100%;
+    width: 100%;
     height: 100px;
     background-image: url("../img/podklad.jpg");
     position: absolute;
     z-index: -1;
-    mix-blend-mode:multiply;
+    mix-blend-mode: multiply;
     top: -60px;
 }
 
 .cien {
-    
-    background: linear-gradient(#fff, #eee);;
+
+    background: linear-gradient(#fff, #eee);
+    ;
     width: 100%;
     height: 800px;
-/*    object-position: top;*/
-     top: -500px;
+    /*    object-position: top;*/
+    top: -500px;
     z-index: -1;
-    position:absolute;  
+    position: absolute;
 }
 
 .zdj1 {
-    background: url("../img/zdj/zdj1.png")center no-repeat; transform: rotate(5deg)}
+    background: url("../img/zdj/zdj1.png")center no-repeat;
+    transform: rotate(5deg)
+}
+
 .zdj2 {
-    background: url("../img/zdj/zdj2.png")center no-repeat;transform: rotate(-8deg)}
+    background: url("../img/zdj/zdj2.png")center no-repeat;
+    transform: rotate(-8deg)
+}
+
 .zdj3 {
     background: url("../img/zdj/zdj3.png")center no-repeat;
-    transform: rotate(-2deg)}
+    transform: rotate(-2deg)
+}
+
 .zdj4 {
     background: url("../img/zdj/zdj4.png")center no-repeat;
-    transform: rotate(-2deg)}
+    transform: rotate(-2deg)
+}
+
 .zdj5 {
     background: url("../img/zdj/zdj5.png")center no-repeat;
-    transform: rotate(-2deg)}
+    transform: rotate(-2deg)
+}
+
 .zdj6 {
     background: url("../img/zdj/zdj6.png")center no-repeat;
-    transform: rotate(5deg)}
+    transform: rotate(5deg)
+}
 
 .nagl {
     display: block;
@@ -285,17 +484,19 @@ h3{
     text-transform: uppercase;
 }
 
-hr{
-    border: 0px; background: #97714F; height: 2px;
+hr {
+    border: 0px;
+    background: #97714F;
+    height: 2px;
     width: 95%;
-    
+
 }
 
-.mapa{
-    
+.mapa {
+
     width: 100%;
     height: 25rem;
-    background: url("../img/mapa.jpg") top no-repeat; 
+    background: url("../img/mapa.jpg") top no-repeat;
     background-size: contain;
     position: relative;
     margin: 0 auto;
@@ -305,9 +506,9 @@ hr{
 
 .bgvoucher {
     width: 100%;
-    height: 30rem;    
+    height: 30rem;
     background: url("../img/bgVoucher.jpg") no-repeat;
-    background-size: cover;  
+    background-size: cover;
 }
 
 
@@ -333,15 +534,16 @@ hr{
     background: url("../img/zdj/rob.jpg") no-repeat;
     background-position: center;
     background-size: 90% auto;
-    //rotate: 5deg;
+    /* rotate: 5deg; */
 }
 
-p{
+p {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 1rem;
     display: inline;
 }
+
 .film {
     position: relative;
     margin: -10px 0;
@@ -353,42 +555,42 @@ p{
     width: 100%;
     height: 310px;
     top: 30px;
-    margin-top: 50px;     
+    margin-top: 50px;
     background: url("../img/SVG/voucher.svg") center no-repeat;
     background-size: contain;
 }
 
-.kontakt{
+.kontakt {
     display: block;
     width: 100%;
     height: 160px;
     margin: 0 auto;
 }
 
-.kontakt-item{
+.kontakt-item {
     display: grid;
     grid-auto-flow: column;
     width: 100%;
     height: 3rem;
-    grid-template-columns: 35% 65%;    
+    grid-template-columns: 35% 65%;
 }
 
-.item{
+.item {
     align-self: center;
     justify-self: start;
     font-size: 1.4rem;
-    font-family:'Poppins Regular';
+    font-family: 'Poppins Regular';
     font-weight: 700;
-    
+
 }
 
-.obrazek{
+.obrazek {
     align-self: center;
     justify-self: center;
 }
 
 
-.img-rys{
+.img-rys {
     width: 12rem;
     height: 12rem;
     background-image: url("../img/SVG/perfume.svg");
@@ -403,89 +605,99 @@ p{
 .img-rys-logo {
     background-image: url("../img/logo/rust-textures-logo.png");
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     width: 20rem;
     height: 15rem;
     margin: -20px auto;
 }
 
 
-@media all and (max-width: 493px){
-    header{
+@media all and (max-width: 493px) {
+    header {
         width: 100%;
-        height: 19rem;  
+        height: 19rem;
         background-color: aquamarine;
     }
-    .relax{ 
+
+    .relax {
         display: none;
     }
-    .coffe{ 
+
+    .coffe {
         display: none;
     }
-    .cennik{
+
+    .cennik {
         height: 1293px;
         background-color: #242329;
     }
-    .zdjecia{
+
+    .zdjecia {
         background-size: cover;
         background-image: url("../img/bgzdjeciamobile.jpg");
-    } 
-    .mapa{
-        height: 30rem;
-         background-size: cover;
     }
-    .kontakt-item{
+
+    .mapa {
+        height: 30rem;
+        background-size: cover;
+    }
+
+    .kontakt-item {
         grid-template-columns: 35% 65%;
     }
 }
 
 
 @media all and (min-width: 494px) and (max-width: 768px) {
-   header{
+    header {
         width: 100%;
-        height: 29.8rem;  
-/*        background-color: aquamarine;*/
+        height: 29.8rem;
+        /*        background-color: aquamarine;*/
     }
-    .cennik{
+
+    .cennik {
         height: 1200px;
-/*        background: url("../img/bgCennik.jpg") top no-repeat ;*/
+        /*        background: url("../img/bgCennik.jpg") top no-repeat ;*/
         background-color: #242329;
     }
-    
-    .zdjecia{
+
+    .zdjecia {
         background-size: cover;
         background-image: url("../img/bgzdjecia.jpg");
-/*        background-repeat: repeat-y;*/
-    }  
-    
-    .relax{ 
+        /*        background-repeat: repeat-y;*/
+    }
+
+    .relax {
         display: none;
     }
-/*
+
+    /*
     .relax{ 
     display: flex;
-       }*/ 
-    .mapa{
+       }*/
+    .mapa {
         height: 45rem;
-         background-size: cover;
-    }
-    .zdjecia{
         background-size: cover;
-        
+    }
+
+    .zdjecia {
+        background-size: cover;
+
         /*        background-image: url("../img/bgzdjecia.jpg");*/
-    } 
-    .kontakt{
+    }
+
+    .kontakt {
         width: 80%;
     }
-    
-    .kontakt-item{
+
+    .kontakt-item {
         grid-template-columns: 40% 60%;
     }
 }
 
-@media all and (min-width: 769px){
-.page-wrapper{
-/*    max-width: 400px;*/
+@media all and (min-width: 769px) {
+    .page-wrapper {
+        /*    max-width: 400px;*/
         max-width: 1100px;
         margin-left: auto;
         margin-right: auto;
@@ -493,39 +705,44 @@ p{
         margin-bottom: auto;
         text-shadow: 0px 0px;
     }
-    header
-    {
+
+    header {
         width: 100%;
-        height: 45rem;  
-/*        background-size: cover;*/
-        
-        
+        height: 45rem;
+        /*        background-size: cover;*/
+
+
     }
-    
-    .zdjecia{
+
+    .zdjecia {
         background-size: cover;
         background-image: url("../img/bgzdjecia.jpg");
-/*        background-repeat: repeat-y;*/
-    }  
-    .cennik{
-        height: 1095px;
-        background: url("../img/bgCennik.jpg") top no-repeat ;
-/*        background-color: #242329;*/
+        /*        background-repeat: repeat-y;*/
     }
-    .mapa{
+
+    .cennik {
+        height: 1095px;
+        background: url("../img/bgCennik.jpg") top no-repeat;
+        /*        background-color: #242329;*/
+    }
+
+    .mapa {
         background-size: contain;
         height: 42rem;
         width: 95%;
     }
-    .kontakt{
+
+    .kontakt {
         width: 50%;
     }
-    .item{
+
+    .item {
         font-size: 1.6rem;
     }
-    
-    
+
+
 }
+
 .booksy {
     position: relative;
     width: 10rem;
